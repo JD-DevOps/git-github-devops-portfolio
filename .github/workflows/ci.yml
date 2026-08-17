@@ -12,3 +12,6 @@ jobs:
 
       - name: Run health check
         run: ./app/health.sh
+
+      - name: Run security check
+        run: ./scripts/security-check.sh
