@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run health check
+        run: ./app/health.sh
+
+      - name: Run security check
+        run: ./scripts/security-check.sh
